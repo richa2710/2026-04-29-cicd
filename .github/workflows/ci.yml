@@ -10,3 +10,12 @@ jobs:
         steps: 
             - name: Print Hello
               run: echo "Hello World"
+
+test:
+    name: Test Python Package
+    runs-on: ubuntu-latest
+    steps:
+        - name: Install package
+          run: pip install .[test]
+        - name: Run Pytest
+          run: pytest -vv 
